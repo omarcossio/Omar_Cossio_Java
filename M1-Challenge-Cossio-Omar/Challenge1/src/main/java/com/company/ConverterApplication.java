@@ -11,7 +11,7 @@ public class ConverterApplication implements Converter {
     @Override
     public String convertMonth(int monthNumber) {
         System.out.println("***** inside CONVERT MONTH method");
-        System.out.println("***** monthNumber: " + monthNumber);
+        System.out.println("***** monthNumber inputted: " + monthNumber);
         if(monthNumber == 1) {
             return "January";
         }else if (monthNumber == 2){
@@ -44,7 +44,7 @@ public class ConverterApplication implements Converter {
     @Override
     public String convertDay(int dayNumber) {
         System.out.println("***** inside CONVERT DAY method");
-        System.out.println("***** dayNumber: " + dayNumber);
+        System.out.println("***** dayNumber inputted: " + dayNumber);
         String dayString = "";
         switch(dayNumber) {
             case 1:
@@ -68,7 +68,7 @@ public class ConverterApplication implements Converter {
             case 7:
                 dayString = "Saturday";
                 break;
-            default: dayString = "Enter valid weekday number.";
+            default: dayString = "Must enter valid weekday number";
         }
 
         return dayString;
