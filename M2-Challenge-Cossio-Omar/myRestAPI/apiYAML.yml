@@ -1,0 +1,63 @@
+swagger: "2.0"
+info:
+  description: "API documentation."
+  version: "1.0.0"
+  title: "MyRestAPI"
+  termsOfService: ""
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/"
+tags:
+- name: "answer-controller"
+  description: "answer-controller"
+- name: "definition-controller"
+  description: "definition-controller"
+- name: "quote-controller"
+  description: "quote-controller"
+paths:
+  /magic:
+    post:
+      tags:
+      - "answer-controller"
+      summary: "getRandomAnswer"
+      operationId: "getRandomAnswerUsingPOST"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Answer"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Bad Request"
+  /word:
+    get:
+      tags:
+      - "definition-controller"
+      summary: "getRandomWord"
+      operationId: "getRandomWordUsingGET"
+      responses:
+        "200":
+          description: "OK"
+  /quote:
+    get:
+      tags:
+      - "quote-controller"
+      summary: "getRandomQuote"
+      operationId: "getRandomQuoteUsingGET"
+      responses:
+        "200":
+          description: "OK"
+definitions:
+  Answer:
+    title: "Answer"
+    type: "object"
+    properties:
+      question:
+        type: "string"
+ 
+   
